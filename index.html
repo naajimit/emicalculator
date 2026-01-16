@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Global EMI Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Global EMI Calculator - Fast & Free</h1>
+    <p style="text-align: center; font-size: 15px; color: #535353;">My website does not encourage borrowing</p>
+
+    <div class="currency-dropdown">
+      <select id="currency">
+        <option value="$">United States ($)</option>
+        <option value="؋">Afghanistan (؋)</option>
+        <option value="L">Albania (L)</option>
+        <option value="دج">Algeria (دج)</option>
+        <option value="Kz">Angola (Kz)</option>
+        <option value="$">Argentina ($)</option>
+        <option value="֏">Armenia (֏)</option>
+        <option value="A$">Australia (A$)</option>
+        <option value="€">Austria (€)</option>
+        <option value="₼">Azerbaijan (₼)</option>
+        <option value="৳">Bangladesh (৳)</option>
+        <option value=".د.ب">Bahrain (.د.ب)</option>
+        <option value="€">Belgium (€)</option>
+        <option value="Bs.">Bolivia (Bs.)</option>
+        <option value="KM">Bosnia and Herzegovina (KM)</option>
+        <option value="p">Botswana (P)</option>
+        <option value="R$">Brazil (R$)</option>
+        <option value="B$">Brunei (B$)</option>
+        <option value="лв">Bulgaria (лв)</option>
+        <option value="CFA">Burkina Faso (CFA)</option>
+        <option value="FBu">Burundi (FBu)</option>
+        <option value="៛">Cambodia (៛)</option>
+        <option value="FCFA">Cameroon (FCFA)</option>
+        <option value="C$">Canada (C$)</option>
+        <option value="$">Chile ($)</option>
+        <option value="¥">China (¥)</option>
+        <option value="$">Colombia ($)</option>
+        <option value="₡">Costa Rica (₡)</option>
+        <option value="kn">Croatia (kn)</option>
+        <option value="€">Cyprus (€)</option>
+        <option value="Kč">Czech Republic (Kč)</option>
+        <option value="kr">Denmark (kr)</option>
+        <option value="RD$">Dominican Republic (RD$)</option>
+        <option value="£">Egypt (£)</option>
+        <option value="€">Estonia (€)</option>
+        <option value="Br">Ethiopia (Br)</option>
+        <option value="FJ$">Fiji (FJ$)</option>
+        <option value="€">Finland (€)</option>
+        <option value="€">France (€)</option>
+        <option value="FCFA">Gabon (FCFA)</option>
+        <option value="D">Gambia (D)</option>
+        <option value="₾">Georgia (₾)</option>
+        <option value="€">Germany (€)</option>
+        <option value="₵">Ghana (₵)</option>
+        <option value="€">Greece (€)</option>
+        <option value="Q">Guatemala (Q)</option>
+        <option value="FG">Guinea (FG)</option>
+        <option value="G">Haiti (G)</option>
+        <option value="L">Honduras (L)</option>
+        <option value="Ft">Hungary (Ft)</option>
+        <option value="kr">Iceland (kr)</option>
+        <option value="₹">India (₹)</option>
+        <option value="Rp">Indonesia (Rp)</option>
+        <option value="﷼">Iran (﷼)</option>
+        <option value="ع.د">Iraq (ع.د)</option>
+        <option value="€">Ireland (€)</option>
+        <option value="₪">Israel (₪)</option>
+        <option value="€">Italy (€)</option>
+        <option value="J$">Jamaica (J$)</option>
+        <option value="¥">Japan (¥)</option>
+        <option value="د.ا">Jordan (د.ا)</option>
+        <option value="₸">Kazakhstan (₸)</option>
+        <option value="KSh">Kenya (KSh)</option>
+        <option value="د.ك">Kuwait (د.ك)</option>
+        <option value="с">Kyrgyzstan (с)</option>
+        <option value="₭">Laos (₭)</option>
+        <option value="€">Latvia (€)</option>
+        <option value="ل.ل">Lebanon (ل.ل)</option>
+        <option value="L">Lesotho (L)</option>
+        <option value="L$">Liberia (L$)</option>
+        <option value="ل.د">Libya (ل.د)</option>
+        <option value="€">Lithuania (€)</option>
+        <option value="€">Luxembourg (€)</option>
+        <option value="Ar">Madagascar (Ar)</option>
+        <option value="MK">Malawi (MK)</option>
+        <option value="RM">Malaysia (RM)</option>
+        <option value="Rf">Maldives (Rf)</option>
+        <option value="CFA">Mali (CFA)</option>
+        <option value="€">Malta (€)</option>
+        <option value="UM">Mauritania (UM)</option>
+        <option value="₨">Mauritius (₨)</option>
+        <option value="$">Mexico ($)</option>
+        <option value="L">Moldova (L)</option>
+        <option value="₮">Mongolia (₮)</option>
+        <option value="€">Montenegro (€)</option>
+        <option value="د.م.">Morocco (د.م.)</option>
+        <option value="MT">Mozambique (MT)</option>
+        <option value="K">Myanmar (K)</option>
+        <option value="N$">Namibia (N$)</option>
+        <option value="₨">Nepal (₨)</option>
+        <option value="€">Netherlands (€)</option>
+        <option value="NZ$">New Zealand (NZ$)</option>
+        <option value="C$">Nicaragua (C$)</option>
+        <option value="CFA">Niger (CFA)</option>
+        <option value="₦">Nigeria (₦)</option>
+        <option value="₩">North Korea (₩)</option>
+        <option value="ден">North Macedonia (ден)</option>
+        <option value="kr">Norway (kr)</option>
+        <option value="﷼">Oman (﷼)</option>
+        <option value="₨">Pakistan (₨)</option>
+        <option value="₪">Palestine (₪)</option>
+        <option value="B/.">Panama (B/.)</option>
+        <option value="K">Papua New Guinea (K)</option>
+        <option value="₲">Paraguay (₲)</option>
+        <option value="S/">Peru (S/)</option>
+        <option value="₱">Philippines (₱)</option>
+        <option value="zł">Poland (zł)</option>
+        <option value="€">Portugal (€)</option>
+        <option value="﷼">Qatar (﷼)</option>
+        <option value="lei">Romania (lei)</option>
+        <option value="₽">Russia (₽)</option>
+        <option value="FRw">Rwanda (FRw)</option>
+        <option value="﷼">Saudi Arabia (﷼)</option>
+        <option value="CFA">Senegal (CFA)</option>
+        <option value="дин.">Serbia (дин.)</option>
+        <option value="S$">Singapore (S$)</option>
+        <option value="€">Slovakia (€)</option>
+        <option value="€">Slovenia (€)</option>
+        <option value="R">South Africa (R)</option>
+        <option value="₩">South Korea (₩)</option>
+        <option value="€">Spain (€)</option>
+        <option value="Rs">Sri Lanka (Rs)</option>
+        <option value="ج.س.">Sudan (ج.س.)</option>
+        <option value="$">Suriname ($)</option>
+        <option value="kr">Sweden (kr)</option>
+        <option value="Fr">Switzerland (Fr)</option>
+        <option value="£">Syria (£)</option>
+        <option value="NT$">Taiwan (NT$)</option>
+        <option value="ЅМ">Tajikistan (ЅМ)</option>
+        <option value="TSh">Tanzania (TSh)</option>
+        <option value="฿">Thailand (฿)</option>
+        <option value="د.ت">Tunisia (د.ت)</option>
+        <option value="₺">Turkey (₺)</option>
+        <option value="m">Turkmenistan (m)</option>
+        <option value="USh">Uganda (USh)</option>
+        <option value="₴">Ukraine (₴)</option>
+        <option value="د.إ">United Arab Emirates (د.إ)</option>
+        <option value="£">United Kingdom (£)</option>
+        <option value="$U">Uruguay ($U)</option>
+        <option value="soʻm">Uzbekistan (soʻm)</option>
+        <option value="Bs.S">Venezuela (Bs.S)</option>
+        <option value="₫">Vietnam (₫)</option>
+        <option value="﷼">Yemen (﷼)</option>
+        <option value="ZK">Zambia (ZK)</option>        
+      </select>
+    </div>
+
+    <label for="loanAmount">Loan Amount</label>
+    <input type="number" id="loanAmount" placeholder="Enter loan amount" />
+
+    <label for="interestRate">Annual Interest Rate (%)</label>
+    <input type="number" id="interestRate" placeholder="e.g. 9.5" />
+
+    <label for="loanTenure">Loan Tenure</label>
+    <div class="tenure-row">
+      <input type="number" id="loanTenure" placeholder="Enter loan tenure" />
+      <select id="tenureUnit">
+        <option value="months">Months</option>
+        <option value="years">Years</option>
+      </select>
+    </div>
+
+    <button onclick="calculateEMI()">Calculate EMI</button>
+
+    <div class="result" id="result" style="display:none;">
+      <div class="result-box"><strong>Monthly EMI:</strong> <span id="monthlyEMI"></span></div>
+      <div class="result-box"><strong>Principal amount:</strong> <span id="principalAmount"></span></div>
+      <div class="result-box"><strong>Total interest:</strong> <span id="totalInterest"></span></div>
+      <div class="result-box"><strong>Total amount:</strong> <span id="totalAmount"></span></div>
+      <canvas id="emiChart"></canvas>
+
+      <!-- PDF Download -->
+      <button id="downloadPDF" class="download-btn">Download PDF</button>
+
+      <!-- Social Share Buttons -->
+      <div class="share-buttons">
+        <button class="share-facebook">Share on Facebook</button>
+        <button class="share-whatsapp">Share on WhatsApp</button>
+        <button class="share-twitter">Tweet</button>
+        <button class="share-linkedin">Share on LinkedIn</button>
+        <button class="share-copy">Copy Link</button>
+      </div>
+    </div>
+
+    <!-- Explanation Section -->
+    <div class="why-section">
+      <h2>Why Use This EMI Calculator?</h2>
+      <p>This EMI Calculator helps you estimate your monthly loan payments for any country. Whether you're in Bangladesh, India, the USA, or the UK, this tool will detect your currency and calculate instantly. Download a detailed PDF report or share with your contacts via social media.</p>
+      <p>It's free, secure, and supports all major devices.</p>
+    </div>
+  </div>
+
+  <!-- JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
