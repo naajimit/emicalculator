@@ -3,17 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Global EMI Calculator</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>Global EMI Calculator - Fast & Free</h1>
-    <p style="text-align: center; font-size: 15px; color: #535353;">My website does not encourage borrowing</p>
 
-    <div class="currency-dropdown">
-      <select id="currency">
-        <option value="$">United States ($)</option>
+  <title>calculator of emi – home loan emi calculator</title>
+
+  <!-- SEO (Global Target) -->
+  <meta name="description" content="Free global EMI calculator. Calculate loan EMI, interest, total amount. Supports all countries and currencies. Download or share EMI PDF instantly.">
+  <meta name="keywords" content="EMI Calculator, Loan EMI Calculator, Global EMI Calculator, EMI Calculator Online">
+
+  <!-- ✅ FAVICON FIX (Cache Safe & Multi Support) -->
+  <!-- FAVICON (SAFE & FINAL) -->
+<link rel="icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="favicon.ico">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>calculator of emi – personal loan emi calculator</h1>
+  <p style="text-align:center;font-size:14px;color:#555;">
+    Calculate EMI for any country and any currency
+  </p>
+
+  <!-- Currency -->
+  <label for="currency">Currency</label>
+  <select id="currency">
+    <option value="$">United States ($)</option>
         <option value="؋">Afghanistan (؋)</option>
         <option value="L">Albania (L)</option>
         <option value="دج">Algeria (دج)</option>
@@ -157,61 +182,211 @@
         <option value="₫">Vietnam (₫)</option>
         <option value="﷼">Yemen (﷼)</option>
         <option value="ZK">Zambia (ZK)</option>        
-      </select>
-    </div>
+  </select>
 
-    <label for="loanAmount">Loan Amount</label>
-    <input type="number" id="loanAmount" placeholder="Enter loan amount" />
+  <!-- Loan Amount -->
+  <label for="loanAmount">Loan Amount</label>
+  <input type="number" id="loanAmount" placeholder="Enter loan amount" />
 
-    <label for="interestRate">Annual Interest Rate (%)</label>
-    <input type="number" id="interestRate" placeholder="e.g. 9.5" />
+  <!-- Interest Rate -->
+  <label for="interestRate">Annual Interest Rate (%)</label>
+  <input type="number" id="interestRate" placeholder="Example: 9.5" />
 
-    <label for="loanTenure">Loan Tenure</label>
-    <div class="tenure-row">
-      <input type="number" id="loanTenure" placeholder="Enter loan tenure" />
-      <select id="tenureUnit">
-        <option value="months">Months</option>
-        <option value="years">Years</option>
-      </select>
-    </div>
-
-    <button onclick="calculateEMI()">Calculate EMI</button>
-
-    <div class="result" id="result" style="display:none;">
-      <div class="result-box"><strong>Monthly EMI:</strong> <span id="monthlyEMI"></span></div>
-      <div class="result-box"><strong>Principal amount:</strong> <span id="principalAmount"></span></div>
-      <div class="result-box"><strong>Total interest:</strong> <span id="totalInterest"></span></div>
-      <div class="result-box"><strong>Total amount:</strong> <span id="totalAmount"></span></div>
-      <canvas id="emiChart"></canvas>
-
-      <!-- PDF Download -->
-      <button id="downloadPDF" class="download-btn">Download PDF</button>
-
-      <!-- Social Share Buttons -->
-      <div class="share-buttons">
-        <button class="share-facebook">Share on Facebook</button>
-        <button class="share-whatsapp">Share on WhatsApp</button>
-        <button class="share-twitter">Tweet</button>
-        <button class="share-linkedin">Share on LinkedIn</button>
-        <button class="share-copy">Copy Link</button>
-      </div>
-    </div>
-
-    <!-- Explanation Section -->
-    <div class="why-section">
-      <h2>Why Use This EMI Calculator?</h2>
-      <p>This EMI Calculator helps you estimate your monthly loan payments for any country. Whether you're in Bangladesh, India, the USA, or the UK, this tool will detect your currency and calculate instantly. Download a detailed PDF report or share with your contacts via social media.</p>
-      <p>It's free, secure, and supports all major devices.</p>
-    </div>
+  <!-- Loan Tenure -->
+  <label for="loanTenure">Loan Tenure</label>
+  <div class="tenure-row">
+    <input type="number" id="loanTenure" placeholder="Enter tenure" />
+    <select id="tenureUnit">
+      <option value="months">Months</option>
+      <option value="years">Years</option>
+    </select>
   </div>
 
-  <!-- JS Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <script src="script.js"></script>
+  <!-- Calculate Button -->
+  <button onclick="calculateEMI()">Calculate EMI</button>
+
+  <!-- RESULT -->
+  <div class="result" id="result" style="display:none;">
+    <div class="result-box">
+      <strong>Monthly EMI:</strong>
+      <span id="monthlyEMI"></span>
+    </div>
+
+    <div class="result-box">
+      <strong>Principal Amount:</strong>
+      <span id="principalAmount"></span>
+    </div>
+
+    <div class="result-box">
+      <strong>Total Interest:</strong>
+      <span id="totalInterest"></span>
+    </div>
+
+    <div class="result-box">
+      <strong>Total Amount:</strong>
+      <span id="totalAmount"></span>
+    </div>
+
+    <canvas id="emiChart"></canvas>
+
+    <!-- ✅ DOWNLOAD PDF FIX -->
+    <button id="downloadPDF" class="download-btn">⬇ Download PDF</button>
+
+    <!-- SHARE PDF -->
+    <button id="sharePDF">📄 Share EMI PDF</button>
+  </div>
+
+  <!-- WHY -->
+  <div class="why-section">
+
+  <h1>House Loan EMI Calculator – Calculate Loan EMI Online Instantly</h1>
+
+  <p>
+    A <strong>house loan emi calculator</strong> helps you quickly calculate your monthly EMI before taking any type of loan.
+    Whether you are planning to buy a house, apply for a personal loan, or check EMI estimates similar to bank calculators,
+    this free online tool gives you accurate results in seconds.
+  </p>
+
+  <p>
+    Using this calculator, you can easily plan your finances, compare loan options,
+    and avoid surprises in monthly repayments.
+  </p>
+
+  <h2>How Does This EMI Calculator Work?</h2>
+
+  <p>
+    This EMI calculator uses the standard loan EMI formula to calculate your monthly installment
+    based on the following details:
+  </p>
+
+  <ul>
+    <li>Loan amount</li>
+    <li>Interest rate</li>
+    <li>Loan tenure</li>
+  </ul>
+
+  <p>
+    Once you enter these values, the calculator instantly shows your monthly EMI,
+    helping you make better financial decisions.
+  </p>
+
+  <h2>House Loan EMI Calculator</h2>
+
+  <p>
+    A <strong>house loan emi calculator</strong> is essential when planning to buy or construct a home.
+    Home loans usually come with long repayment periods, so even a small change in interest rate
+    can significantly affect your monthly EMI.
+  </p>
+
+  <p>
+    With this calculator, you can:
+  </p>
+
+  <ul>
+    <li>Estimate your monthly house loan EMI</li>
+    <li>Adjust loan tenure to reduce EMI burden</li>
+    <li>Plan your home purchase budget effectively</li>
+  </ul>
+
+  <p>
+    This tool works for all types of house or home loans offered by banks and financial institutions.
+  </p>
+
+  <h2>Personal Loan EMI Calculator</h2>
+
+  <p>
+    A <strong>personal loan emi calculator</strong> helps you calculate EMI for unsecured loans
+    such as medical expenses, education, travel, or emergencies.
+  </p>
+
+  <p>
+    Personal loans generally have higher interest rates and shorter tenures,
+    making EMI planning very important.
+  </p>
+
+  <p>
+    By entering the loan amount, interest rate, and tenure,
+    you can instantly see how much EMI you need to pay every month
+    and choose a repayment plan that suits your income.
+  </p>
+
+  <h2>hdfc Home Loan Calculator (emi Estimation)</h2>
+
+  <p>
+    Many users search for an <strong>hdfc home loan calculator</strong> to estimate their EMI
+    before applying for a home loan.
+    This EMI calculator can be used to estimate home loan EMI
+    similar to HDFC home loan calculations by entering the applicable interest rate and tenure.
+  </p>
+
+  <p>
+    <em>
+      Note: This tool is not associated with HDFC Bank.
+      It is provided for general EMI estimation and financial planning purposes only.
+    </em>
+  </p>
+
+  <h3>EMI Calculation Formula</h3>
+
+  <p>
+    EMI is calculated using the standard formula:
+  </p>
+
+  <p>
+    <strong>emi = [P × R × (1 + R)<sup>N</sup>] / [(1 + R)<sup>N</sup> – 1]</strong>
+  </p>
+
+  <p>
+    Where:
+  </p>
+
+  <ul>
+    <li><strong>P</strong> = Loan amount</li>
+    <li><strong>R</strong> = Monthly interest rate</li>
+    <li><strong>N</strong> = Loan tenure in months</li>
+  </ul>
+
+  <p>
+    You do not need to calculate this manually.
+    This EMI calculator automatically applies the formula and shows instant results.
+  </p>
+
+  <h2>Why Use This EMI Calculator?</h2>
+
+  <ul>
+    <li>Free and easy to use</li>
+    <li>Accurate EMI calculation</li>
+    <li>Works for house loan and personal loan EMI</li>
+    <li>Useful for planning bank home loans including HDFC-style EMI estimates</li>
+  </ul>
+
+  <p>
+    This <strong>house loan emi calculator</strong> is designed to help you calculate EMI
+    for different loan types, including <strong>personal loan emi</strong>
+    and home loan EMI estimates similar to an <strong>HDFC home loan calculator</strong>.
+    Use it before applying for any loan to manage your monthly budget wisely.
+  </p>
+  </div>
+</div>
+
+<!-- MAIN JS -->
+<script src="script.js"></script>
+
+<!-- ✅ DOWNLOAD BUTTON FIX -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const downloadBtn = document.getElementById("downloadPDF");
+    const shareBtn = document.getElementById("sharePDF");
+
+    if (downloadBtn) {
+      downloadBtn.addEventListener("click", generateAndSharePDF);
+    }
+
+    if (shareBtn) {
+      shareBtn.addEventListener("click", generateAndSharePDF);
+    }
+  });
+</script>
+
 </body>
 </html>
-
-
-
