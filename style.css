@@ -1,221 +1,247 @@
+/* ================================
+   GLOBAL RESET & BASE STYLE
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f7fa;
-    margin: 0;
-    padding: 20px;
-    color: #333;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: auto;
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  
-  h1, h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    color: #222;
-  }
-  
-  select, input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-top: 10px;
-  }
-  
-  label {
-    margin-top: 15px;
-    display: block;
-    font-weight: 600;
-  }
-  
-  button {
-    margin-top: 20px;
-    padding: 12px;
-    width: 100%;
-    font-size: 16px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  button:hover {
-    background: #0056b3;
-  }
-  
-  #downloadPDF {
-    background: #28a745;
-  }
-  
-  #downloadPDF:hover {
-    background: #218838;
-  }
-  
-  .result {
-    margin-top: 25px;
-    background: #e9f7ef;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  .result-box {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+.container {
+  max-width: 620px;
+  margin: auto;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* ================================
+   HEADINGS
+================================ */
+h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 14px;
+  color: #1f2937;
+}
+
+/* ================================
+   FORM LABELS
+================================ */
+label {
+  display: block;
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+/* ================================
+   INPUTS & SELECT
+================================ */
+input[type="number"],
+select {
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Focus State */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+/* ================================
+   TENURE ROW
+================================ */
+.tenure-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.tenure-row input {
+  flex: 1;
+}
+
+.tenure-row select {
+  width: 42%;
+}
+
+/* ================================
+   BUTTONS (GLOBAL)
+================================ */
+button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: #ffffff;
+  transition: transform 0.15s ease,
+              box-shadow 0.15s ease,
+              background 0.25s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ================================
+   RESULT SECTION
+================================ */
+.result {
+  margin-top: 32px;
+  padding: 22px;
+  border-radius: 14px;
+  background: #ecfdf5;
+  text-align: center;
+}
+
+/* Result Boxes */
+.result-box {
+  background: #ffffff;
+  margin: 10px auto;
+  padding: 14px;
+  width: 92%;
+  font-size: 14.5px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.result-box strong {
+  color: #111827;
+}
+
+/* ================================
+   CHART
+================================ */
+canvas {
+  margin-top: 26px;
+  max-width: 100%;
+}
+
+/* ================================
+   DOWNLOAD PDF BUTTON
+================================ */
+#downloadPDF {
+  background: #2563eb;
+}
+
+#downloadPDF:hover {
+  background: #1e40af;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+}
+
+/* ================================
+   SHARE PDF BUTTON
+================================ */
+#sharePDF {
+  background: #16a34a;
+  margin-top: 16px;
+}
+
+#sharePDF:hover {
+  background: #15803d;
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.35);
+}
+
+/* ================================
+   WHY SECTION
+================================ */
+.why-section {
+  margin-top: 40px;
+  padding: 22px;
+  border-radius: 14px;
+  background: #f1f5f9;
+}
+
+.why-section p {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+/* ================================
+   PDF EXPORT SAFETY
+================================ */
+@media print {
+  body {
     background: #ffffff;
-    border: 1px solid #b6b5b5;
-    padding: 10px;
-    margin: 5px auto;
-    width: 85%;
-    font-size: 14px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  }
-  
-  canvas {
-    margin-top: 20px;
-  }
-  /* Social Share Buttons Styling */
-  
-  .share-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
-  }
-  
-  /* Common style structure: you can override individually */
-  .share-buttons button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-    white-space: nowrap;
-    padding: 10px 15px;
-  }
-  
-  .share-buttons button i {
-    margin-right: 8px;
-    pointer-events: none;
-  }
-  
-  /* Facebook Button */
-  .share-facebook {
-    font-size: 17px;
-    width: 185px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: #3b5998;
-  }
-  .share-facebook:hover {
-    background-color: #2d4373;
-  }
-  
-  /* WhatsApp Button */
-  .share-whatsapp {
-    font-size: 17px;
-    width: 185px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: #25D366;
-  }
-  .share-whatsapp:hover {
-    background-color: #1ebe57;
-  }
-  
-  /* Twitter Button */
-  .share-twitter {
-    font-size: 17px;
-    width: 110px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: #1DA1F2;
-  }
-  .share-twitter:hover {
-    background-color: #0d8ddb;
-  }
-  
-  /* LinkedIn Button */
-  .share-linkedin {
-    font-size: 17px;
-    width: 185px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: #0077b5;
-  }
-  .share-linkedin:hover {
-    background-color: #005f91;
-  }
-  
-  /* Copy Link Button */
-  .share-copy {
-    font-size: 17px;
-    width: 120px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: #6c757d;
-  }
-  .share-copy:hover {
-    background-color: #545b62;
   }
 
-  .why-section {
-    margin-top: 30px;
-    background: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
+  button {
+    display: none !important;
   }
-  
-  .why-section p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 10px;
+}
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 480px) {
+  body {
+    padding: 14px;
   }
-  
+
+  .container {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
   .tenure-row {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+    flex-direction: column;
   }
-  
-  .tenure-row input {
-    flex: 1;
-  }
-  
+
   .tenure-row select {
-    width: 40%;
+    width: 100%;
   }
-  
-  @media (max-width: 480px) {
-    .tenure-row {
-      flex-direction: column;
-    }
-    .tenure-row select {
-      width: 100%;
-    }
-  
-    .share-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .share-buttons button {
-      width: 90%;
-    }
+
+  button {
+    font-size: 15px;
+    padding: 13px;
   }
-  
+}
