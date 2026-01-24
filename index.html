@@ -371,26 +371,5 @@
 
 <!-- MAIN JS -->
 <script src="script.js"></script>
-
-<!-- ✅ DOWNLOAD BUTTON FIX -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const downloadBtn = document.getElementById("downloadPDF");
-    const shareBtn = document.getElementById("sharePDF");
-
-    if (downloadBtn) {
-      downloadBtn.addEventListener("click", generateAndSharePDF);
-    }
-
-    if (shareBtn) {
-      shareBtn.addEventListener("click", generateAndSharePDF);
-    }
-  });
-</script>
-
 </body>
 </html>
-
-
-
-
