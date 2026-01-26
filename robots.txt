@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /search
 Allow: /
-
-Sitemap: "https://calculatorofemi.vercel.app/sitemap.xml?redirect=false&start-index=1&max-results=500
+Sitemap: https://calculatorofemi.vercel.app/sitemap.xml
