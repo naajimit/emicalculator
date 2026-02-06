@@ -193,3 +193,17 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 });
+
+const questions = document.querySelectorAll(".faq-question");
+questions.forEach((q) => {
+  q.addEventListener("click", () => {
+    const answer = q.nextElementSibling;
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      // close other open answers
+      document.querySelectorAll(".faq-answer").forEach((a) => a.style.maxHeight = null);
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
+});
